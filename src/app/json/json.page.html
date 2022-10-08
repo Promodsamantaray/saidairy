@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>json</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+
+<button class="yellow-button-br"> Green button</button>
+
+   </ion-row>
+   <ion-row>
+    <ion-col size="12">
+      <ion-accordion-group expand="inset" [value]="selectedAccordion">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>alphabets</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-col  size='12' size-md="12" size-lg="12">
+              <ion-row>
+              <ion-col  size='12' size-md="6" size-lg="12">
+
+                  <ion-chip size="large" *ngFor="let member of alphabetList" [class]="member['active']?'active':''" (click)="select(member)" color="primary">
+                    <ion-label>{{member.alphabetName|uppercase  }}</ion-label>
+                    </ion-chip>
+
+               </ion-col>
+              </ion-row>
+
+            </ion-col>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>cards</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-col size='12' size-md="12" size-lg="12">
+              <ion-row >
+                <ion-col size='12' size-md="4" size-lg="3" *ngFor="let item of selectedItem?.images">
+                  <ion-card class="ion-no-margin">
+                    <ion-card-header>
+                       <img
+                       [src]="item.src"
+                      >
+                    </ion-card-header>
+                    <ion-item>
+                      <ion-label>Name : {{item.name|uppercase}}</ion-label>
+                    </ion-item>
+                  </ion-card>
+                </ion-col>
+
+
+              </ion-row>
+
+            </ion-col>
+          </div>
+        </ion-accordion>
+
+      </ion-accordion-group>
+    </ion-col>
+
+   </ion-row>
+</ion-content>

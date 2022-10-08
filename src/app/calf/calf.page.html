@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+    <ion-title>calf</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="milkingForm">
+    <ion-item>
+      <ion-label>Select: Cow</ion-label>
+      <ion-select class="custom-options" formControlName="cowName">
+        <ion-select-option [value]="item.name" *ngFor="let item of list">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select: Date</ion-label>
+      <ion-datetime formControlName="date"  value="{{modifyDate}}" ></ion-datetime>
+     </ion-item>
+     <ion-item>
+      <ion-label>Milking</ion-label>
+      <input id="last-name" type="number" formControlName="milk">
+     </ion-item>
+
+    <ion-button (click)="submit()">Submit</ion-button>
+  </form>
+
+
+  <ion-list>
+    <ion-item *ngFor="let member of milkingList">
+      <ion-label>
+        <h2>{{member.cowName
+          | titlecase}}</h2>
+      </ion-label>
+      <ion-label>
+        <h2>{{member.date}}</h2>
+      </ion-label>
+      <ion-label>
+        <h2>{{member.milk}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

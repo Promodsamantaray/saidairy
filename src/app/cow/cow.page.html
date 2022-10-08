@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+    <ion-title>cow</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cowForm">
+    <ion-row>
+      <ion-col size="12" size-md="12" size-lg="12">
+    <ion-item>
+      <ion-label>Select: Cow</ion-label>
+      <input type="text" formControlName="cowName">
+    </ion-item>
+    <ion-item>
+      <ion-label>Select: Parent</ion-label>
+      <ion-select class="" formControlName="parentName">
+        <ion-select-option [value]="item.name" *ngFor="let item of list">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select: Tag Name</ion-label>
+      <input type="text" formControlName="tagName">
+    </ion-item>
+    <ion-item>
+      <ion-label>Select: Teeth</ion-label>
+      <input type="number" formControlName="teeth">
+    </ion-item>
+    <div class="btn">
+      <ion-button (click)="submit()" [disabled]="cowForm.invalid">Submit</ion-button>
+    </div>
+  </ion-col>
+ </ion-row>
+   <ion-row>
+     <ion-col size="12" size-md="6" size-lg="6" *ngFor="let member of list">
+      <ion-card class="list">
+        <img
+        [src]="member.image"
+        [alt]="member.name">
+      </ion-card>
+    </ion-col>
+   </ion-row>
+</form>
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>AI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-row>
+<ng-container *ngFor="let member of ai">
+  <ion-col size="12" size-md="6" size-lg="2">
+
+    <ion-card class="ion-no-padding ion-no-margin">
+        <img
+        [src]="member.image"
+        [alt]="member.semen">
+        <!-- class="ion-text-right" -->
+      <div class="more" class="ion-text-right" >
+        {{member.semen}}
+        <ion-button (click)="details(member)" fill="clear" shape="round">
+          <ion-label *ngIf="member.more"><ion-icon name="chevron-down-outline" ></ion-icon></ion-label>
+          <ion-label *ngIf="!member.more "><ion-icon name="chevron-up-outline" ></ion-icon></ion-label>
+        </ion-button>
+      </div>
+    <ion-list *ngIf="member.more">
+     <ion-item>
+      <ion-label>Semen:{{member.semen}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>Storage:{{member.storage}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>Vendor:{{member.vendor}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>location:{{member.location}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>Specification:{{member.specification}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>brand:{{member.brand}}</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-label>review:{{member.review}}</ion-label>
+     </ion-item>
+    </ion-list>
+    </ion-card>
+  </ion-col>
+</ng-container>
+
+</ion-row>
+
+
+</ion-content>

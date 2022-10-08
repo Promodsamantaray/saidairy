@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header> Recent Conversations </ion-list-header>
+    <div class="ion-text-right">
+      <ion-button >Default</ion-button>
+    </div>
+
+    <ion-item-sliding *ngFor="let item of contactList">
+      <ion-item-options side="start">
+        <ion-item-option >Call</ion-item-option>
+      </ion-item-options>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="item.image" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item.name}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="detail(item)">Detail</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Insurance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+   <ion-col *ngFor="let member of insurance" size='12' size-md="3" size-lg="3">
+     <ion-card>
+       <ion-card-header>
+          <img
+          [src]="member.image"
+          [alt]="member.cowname">
+       </ion-card-header>
+       <ion-item>
+         <ion-label>Cow Name : {{member.cowname}}</ion-label>
+       </ion-item>
+       <ion-item>
+         <ion-label>Tag Number : {{member.tagname}}</ion-label>
+       </ion-item>
+       <ion-item>
+         <ion-label>Insurance Number : {{member.insurancenumber}}</ion-label>
+       </ion-item>
+       <ion-item>
+         <ion-label>Issue Date : {{member.issuedate}}</ion-label>
+       </ion-item>
+     </ion-card>
+   </ion-col>
+  </ion-row>
+</ion-content>
+
+

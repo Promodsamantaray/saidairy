@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="modalController.dismiss()" fill="clear" slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-label> {{ selectedAI.semen | titlecase }}</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="">
+    <img
+    [src]="selectedAI.image"
+    [alt]="selectedAI.semen">
+<ion-list *ngIf="selectedAI.more">
+ <ion-item>
+  <ion-label>Semen:{{selectedAI.semen}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>Storage:{{selectedAI.storage}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>Vendor:{{selectedAI.vendor}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>location:{{selectedAI.location}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>Specification:{{selectedAI.specification}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>brand:{{selectedAI.brand}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label>review:{{selectedAI.review}}</ion-label>
+ </ion-item>
+</ion-list>
+</ion-card>
+</ion-content>

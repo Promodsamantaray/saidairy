@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Insemination</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" size-md="6" size-lg="6" *ngFor="let member of insemination">
+      <ion-card>
+
+        <div class="ion-text-end" >
+          <button (click)="details(member)">
+            <ion-icon name="add-circle-outline" ></ion-icon>
+          </button>
+        </div>
+
+        <!-- <img
+        [src]="member.image"
+        [alt]=""> -->
+        <ion-item class="ion-text-center">
+          <ion-label>{{member.name}}</ion-label>
+        </ion-item>
+
+      <ion-list *ngIf="member.more">
+
+
+        <ion-item>
+        <ion-label>Date : {{member.Date}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>AI : {{member.ai}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>State : {{member.state}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Medicine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-item>
+      <ion-label>Select: Color</ion-label>
+      <ion-select class="custom-options"  multiple="true" interface="action-sheet">
+        <ion-select-option [value]="item.name" *ngFor="let item of medicine">{{item.name | titlecase }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" size-md="4" size-lg="3" *ngFor="let member of medicine">
+     <ion-card class="medicine ion-no-margin" >
+      <ion-card-header>
+        <ion-label color="primary">{{member.name}}</ion-label>
+       </ion-card-header>
+       <img
+       [src]="member.image"
+       [alt]="member.name">
+       <ion-card-content>
+        <ion-button color="danger" *ngIf="member.piece<=member.alertPiece">Alert</ion-button>
+        <p>Expiry:{{member.expiry}}</p>
+        <p>piecs {{member.piece}}</p>
+        {{member.desc}}
+      </ion-card-content>
+     </ion-card>
+   </ion-col>
+
+   <!-- <ion-col size="12" size-md="6" size-lg="3">
+     <ion-card>
+      <div class="medicine">
+        <img src="/assets/image/totavit strong.jpg" alt="image">
+        <ion-card-header>
+         <ion-card-title>Mineral Mixture</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+         Keep close to Nature's heart... and break clear away, once in awhile,
+         and climb a mountain or spend a week in the woods. Wash your spirit clean.
+       </ion-card-content>
+
+      </div>
+     </ion-card>
+   </ion-col>
+
+   <ion-col size="12" size-md="6" size-lg="3">
+     <ion-card class="medicine">
+       <img src="/assets/image/totavit strong.jpg" alt="image">
+       <ion-card-header>
+        <ion-card-title>Mineral Mixture</ion-card-title>
+       </ion-card-header>
+
+       <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+     </ion-card>
+   </ion-col>
+
+   <ion-col size="12" size-md="6" size-lg="3">
+     <ion-card class="medicine">
+       <img src="/assets/image/totavit strong.jpg" alt="image">
+       <ion-card-header>
+        <ion-card-title>Mineral Mixture</ion-card-title>
+       </ion-card-header>
+
+       <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+     </ion-card>
+   </ion-col> -->
+  </ion-row>
+</ion-content>

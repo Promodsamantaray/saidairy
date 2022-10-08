@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="modalController.dismiss()" fill="clear" slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-label> {{ selectedSI.name | titlecase }}</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+
+    <!-- <div class="ion-text-end" >
+      <button (click)="details(selectedSI)">
+        <ion-icon name="add-circle-outline" ></ion-icon>
+      </button>
+    </div> -->
+
+    <img
+    [src]="selectedSI.image"
+    [alt]="">
+    <ion-item class="ion-text-center">
+      <ion-label>{{selectedSI.name}}</ion-label>
+    </ion-item>
+
+  <ion-list *ngIf="selectedSI.more">
+
+
+    <ion-item>
+    <ion-label>Date : {{selectedSI.Date}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>AI : {{selectedSI.ai}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>State : {{selectedSI.state}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-card>
+</ion-content>

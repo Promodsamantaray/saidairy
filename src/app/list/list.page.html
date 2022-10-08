@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header> Cow </ion-list-header>
+    <ion-row>
+      <ion-col size="12">
+        <cow-list-item [listItems]="list" (items)="selectedItems($event)"></cow-list-item>
+      </ion-col>
+
+      <!-- <ion-col size="12" size-md="6" *ngIf="selectItem">
+       <app-list-card [item]="selectItem"></app-list-card>
+      </ion-col> -->
+    </ion-row>
+  </ion-list>
+</ion-content>

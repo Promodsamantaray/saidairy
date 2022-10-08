@@ -1,0 +1,61 @@
+
+<ion-accordion-group>
+  <ion-accordion value="cow">
+    <ion-item slot="header" color="light">
+      <ion-label>Cow</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let member of cowList">
+          <ion-avatar slot="start">
+            <img [src]="member.image" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{member.name| titlecase}}</h2>
+          </ion-label>
+          <ion-button (click)="memberSelection(member.name)" [color]="member.active?member.active:'secondary'"
+            >Details</ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+
+  <ion-accordion value="hef">
+    <ion-item slot="header" color="light">
+      <ion-label>{{'hef'| titlecase}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let member of heifers">
+          <ion-avatar slot="start">
+            <img [src]="member.image" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{member.name| titlecase}}</h2>
+          </ion-label>
+          <ion-button (click)="memberSelection(member.name)" [color]="member.active?member.active:'secondary'"
+            >Details</ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+  <ion-accordion value="parentRelation">
+    <ion-item slot="header" color="light">
+      <ion-label>{{'calf'| titlecase}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let member of calf">
+          <ion-avatar slot="start">
+            <img [src]="member.image" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{member.name| titlecase}}</h2>
+          </ion-label>
+          <ion-button (click)="memberSelection(member.name)" [color]="member.active?member.active:'secondary'"
+            >Details</ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

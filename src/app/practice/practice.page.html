@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>practice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-card-content>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="3"  *ngFor="let member of practice">
+        <ion-card>
+          <img
+          [src]="member.image"
+          [alt]="member.name">
+          <ion-item>
+            <ion-label>NAME: {{member.name}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>VIL: {{member.village}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>PO: {{member.po}}</ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-card-content>
+</ion-content>
+
+<ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>First Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      First Content
+    </div>
+  </ion-accordion>
+  <ion-accordion value="second">
+    <ion-item slot="header" color="light">
+      <ion-label>Second Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      Second Content
+    </div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Third Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      Third Content
+    </div>
+  </ion-accordion> -->
+<!-- </ion-accordion-group> -->
+
+<ion-content>
+  <form [formGroup]="milkingForm">
+<ion-item>
+  <label for="first-name">Cow Name </label>
+  <ion-item>
+
+    <ion-select class="custom-options" formControlName="cowName">
+      <ion-select-option [value]="item.name" *ngFor="let item of list">{{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-item>
+<ion-item>
+  <ion-label for="last-name">Date </ion-label>
+  <!-- <ion-datetime formControlName="date" value="modifyDate"></ion-datetime> -->
+  <ion-datetime presentation="date-time" [preferWheel]="true" formControlName="date" value="modifyDate"></ion-datetime>
+
+</ion-item>
+<ion-item>
+<label for="last-name">Milking</label>
+<input id="last-name" type="number" formControlName="milk">
+</ion-item>
+<ion-button (click)="submit()">Submit</ion-button>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let member of milkingList">
+      <ion-label>
+        <h2>{{member.cowName
+          | titlecase}}</h2>
+      </ion-label>
+      <ion-label>
+        <h2>{{member.date}}</h2>
+      </ion-label>
+      <ion-label>
+        <h2>{{member.milk}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+
+
+
+
+
+

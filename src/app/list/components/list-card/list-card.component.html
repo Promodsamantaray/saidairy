@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="modalController.dismiss()"  fill="clear" slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-label> {{item.name| titlecase }}</ion-label>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img [src]="item?.image" />
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="Info">
+          <ion-item slot="header" color="light">
+            <ion-label>Self-Info</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-list>
+              <ion-item>
+                <ion-label> Name: {{item.name| titlecase }} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Breed: {{item.breed}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> DOB: {{item.dob}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Gender: {{item.gender}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Feeding: {{item.feeding}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Children: {{item.children?item.children:'N/A'}} </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-accordion>
+
+        <ion-accordion value="parentRelation">
+          <ion-item slot="header" color="light">
+            <ion-label>Parent-info</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-list>
+              <ion-item>
+                <ion-label> Name: {{item?.parentRelation?.parentName | titlecase}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Teeth: {{item.parentRelation.teeth}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Tagname: {{item.parentRelation.tagName}} </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label> Children: {{item.parentRelation.noOfChildren}} </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-accordion>
+
+        <ion-accordion value="Disease">
+          <ion-item slot="header" color="light">
+            <ion-label>Disease</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-list>
+              <ion-item *ngFor="let item of item.disease">
+                <ion-label> {{item.name}}: {{item.year}} </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

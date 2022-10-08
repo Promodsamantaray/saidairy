@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="./home.page.scss" />
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="full-image">
+        <!-- <img src="/assets/image/full image.jpg" alt="farm"> -->
+      </div>
+    </ion-row>
+    <ion-row>
+      <swiper  [autoplay]="true" [keyboard]="false" [pagination]="true" [scrollbar]="true" [zoom]="true" [slidesPerView]="1" [loop]="true">
+        <ng-container *ngFor="let member of newArrival" >
+          <ng-template swiperSlide  >
+            <img
+           [src]="member.image"
+           [alt]="member.name"
+         />
+          </ng-template>
+        </ng-container>
+
+      </swiper>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-title>New Arrival</ion-title>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let member of newArrival">
+        <div class="arrive">
+          <h5 class="title">{{member.name}}</h5>
+          <img
+            [src]="member.image"
+            [alt]="member.name"
+          >
+          <ion-button expand="block" class="detail-button">Detail</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+
+
+    <!-- <ion-row>
+      <ion-col size="12">
+        <ion-title>Product</ion-title>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="3">
+        <ion-card  class="ion-no-margin" >
+          <ion-card-header>
+            <img src="/assets/image/milk.jpg" alt="" />
+            <ion-card-title>Milk</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+            quis!
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="3" >
+        <ion-card  class="ion-no-margin">
+          <ion-card-header>
+            <img src="/assets/image/ghee.jpg" alt="" />
+            <ion-card-title>Ghee</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+            consequatur.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="3" >
+        <ion-card  class="ion-no-margin">
+          <ion-card-header>
+            <img src="/assets/image/paneer.jpg" alt="" />
+            <ion-card-title>Paneer</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi,
+            sequi.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="3" >
+        <ion-card  class="ion-no-margin">
+          <ion-card-header>
+            <img src="/assets/image/cheese.jpg" alt="" />
+            <ion-card-title>Cheese</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi,
+            sequi.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->

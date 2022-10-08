@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Doctor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" *ngFor="let member of doctor">
+      <ion-card >
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <div>
+              <img
+             [src]="member.image"
+             [alt]="member.name">
+           <ion-card-header>
+             <ion-card-title>{{member.name}}</ion-card-title>
+           </ion-card-header>
+         </div>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <div class="desc">
+              <!-- List of Text Items -->
+                    <ion-list>
+                      <ion-list-header>
+                        <ion-label>Cases</ion-label>
+                      </ion-list-header>
+                      <ion-item *ngFor="let item of member.cases">
+                        <ion-label>{{item.name}}</ion-label>
+                      </ion-item>
+                    </ion-list>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+
+
+
+
+
+
+
