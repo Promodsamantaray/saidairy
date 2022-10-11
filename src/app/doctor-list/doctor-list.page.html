@@ -10,22 +10,20 @@
 <ion-content>
   <ion-row>
     <ion-col size="12" *ngFor="let member of doctor">
-      <ion-card >
+      <ion-card  color="primary" >
         <ion-row>
           <ion-col size="12" size-md="6">
             <div>
               <img
              [src]="member.image"
              [alt]="member.name">
-           <ion-card-header>
-             <ion-card-title>{{member.name}}</ion-card-title>
-           </ion-card-header>
          </div>
           </ion-col>
           <ion-col size="12" size-md="6">
             <div class="desc">
+              <ion-card-title>{{member.name}}</ion-card-title>
               <!-- List of Text Items -->
-                    <ion-list>
+                    <ion-list color="primary">
                       <ion-list-header>
                         <ion-label>Cases</ion-label>
                       </ion-list-header>

@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
     path: 'list',
     loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
   },
@@ -76,10 +80,6 @@ const routes: Routes = [
     loadChildren: () => import('./insemination/insemination.module').then( m => m.InseminationPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
     path: 'listpapu',
     loadChildren: () => import('./listpapu/listpapu.module').then( m => m.ListpapuPageModule)
   },
@@ -88,7 +88,7 @@ const routes: Routes = [
     loadChildren: () => import('./pratice/pratice.module').then( m => m.PraticePageModule)
   },
   {
-    path: 'json',
+    path: 'search',
     loadChildren: () => import('./json/json.module').then( m => m.JsonPageModule)
   },
 

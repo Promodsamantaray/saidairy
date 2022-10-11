@@ -15,3 +15,9 @@ fa-icon.ng-fa-icon {
   color: grey;
   font-size: 1.3rem;
 }
+ion-card {
+  &.warning{
+    background: var(--ion-color-warning);
+  }
+
+}

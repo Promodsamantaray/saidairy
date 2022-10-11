@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>dashboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -64,7 +67,7 @@
     <ion-item *ngFor="let item of txsList">
       <ion-label>{{item.date|date}}</ion-label>
       <ion-label>{{item.inout}}</ion-label>
-      <ion-label>{{item.amount}}</ion-label>
+      <ion-label>{{item.amount|currency:'INR'}}</ion-label>
       <ion-label>{{item.description }}</ion-label>
     </ion-item>
 

@@ -10,26 +10,26 @@
 <ion-content>
   <ion-row>
     <ion-item>
-      <ion-label>Select: Color</ion-label>
+      <ion-label>Select: Medicine</ion-label>
       <ion-select class="custom-options"  multiple="true" interface="action-sheet">
-        <ion-select-option [value]="item.name" *ngFor="let item of medicine">{{item.name | titlecase }}</ion-select-option>
+        <ion-select-option [value]="item.name" *ngFor="let item of medicine">{{item.name | uppercase }}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-row>
   <ion-row>
-    <ion-col size="12" size-md="4" size-lg="3" *ngFor="let member of medicine">
-     <ion-card class="medicine ion-no-margin" >
+    <ion-col size="12" size-md="3" size-lg="3" *ngFor="let member of medicine">
+     <ion-card class="medicine ion-no-margin" [color]="member.piece<=member.alertPiece?'warning':''" >
       <ion-card-header>
-        <ion-label color="primary">{{member.name}}</ion-label>
+        <ion-label color="primary">{{member.name|uppercase}}</ion-label>
        </ion-card-header>
        <img
        [src]="member.image"
        [alt]="member.name">
-       <ion-card-content>
-        <ion-button color="danger" *ngIf="member.piece<=member.alertPiece">Alert</ion-button>
+       <ion-card-content class="ion-no-padding">
+        <!-- <ion-button color="warning" *ngIf="member.piece<=member.alertPiece" expand="full">Alert</ion-button> -->
         <p>Expiry:{{member.expiry}}</p>
         <p>piecs {{member.piece}}</p>
-        {{member.desc}}
+        <!-- {{member.desc}} -->
       </ion-card-content>
      </ion-card>
    </ion-col>
